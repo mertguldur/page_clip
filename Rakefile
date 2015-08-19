@@ -1,5 +1,3 @@
-require 'rubocop'
-require 'rspec'
 require 'rubocop/rake_task'
 require 'rspec/core/rake_task'
 
