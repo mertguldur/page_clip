@@ -223,7 +223,7 @@ describe PageClip do
               per_page: 0,
               current_page: 1,
               pages_to_show_count: 5
-          end.to raise_error("Per page must be positive!")
+          end.to raise_error('Per page must be positive!')
         end
       end
 
@@ -235,7 +235,7 @@ describe PageClip do
               per_page: 10,
               current_page: 0,
               pages_to_show_count: 5
-          end.to raise_error("Current page must be positive!")
+          end.to raise_error('Current page must be positive!')
         end
       end
 
@@ -247,7 +247,7 @@ describe PageClip do
               per_page: 10,
               current_page: 1,
               pages_to_show_count: 0
-          end.to raise_error("Pages to show count must be positive!")
+          end.to raise_error('Pages to show count must be positive!')
         end
       end
 
@@ -259,7 +259,7 @@ describe PageClip do
               per_page: 10,
               current_page: 1,
               pages_to_show_count: 2
-          end.to raise_error("Pages to show count must be an odd number!")
+          end.to raise_error('Pages to show count must be an odd number!')
         end
       end
 

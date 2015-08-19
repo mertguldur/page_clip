@@ -1,5 +1,4 @@
 require 'set'
-require 'pry'
 
 class PageClip
   def initialize(item_count, per_page, current_page, pages_to_show_count)
@@ -62,10 +61,10 @@ class PageClip
 
   def verify_arguments(item_count, per_page, current_page, pages_to_show_count)
     fail "Item count can't be negative!" if item_count < 0
-    fail "Per page must be positive!" if per_page <= 0
-    fail "Current page must be positive!" if current_page <= 0
-    fail "Pages to show count must be positive!" if pages_to_show_count <= 0
-    fail "Pages to show count must be an odd number!" if pages_to_show_count.even?
+    fail 'Per page must be positive!' if per_page <= 0
+    fail 'Current page must be positive!' if current_page <= 0
+    fail 'Pages to show count must be positive!' if pages_to_show_count <= 0
+    fail 'Pages to show count must be an odd number!' if pages_to_show_count.even?
   end
 
   def verify_current_page

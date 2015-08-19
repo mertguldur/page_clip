@@ -9,5 +9,6 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split("\n")
   s.license     = 'MIT'
 
-  s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rubocop'
 end
