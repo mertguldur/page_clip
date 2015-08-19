@@ -1,4 +1,4 @@
-require 'page_clip'
+require 'spec_helper'
 
 describe PageClip do
   describe '.show' do
