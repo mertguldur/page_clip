@@ -1,6 +1,7 @@
 # page_clip
 
 [![Build Status](https://travis-ci.org/mertguldur/page_clip.svg?branch=master)](https://travis-ci.org/mertguldur/page_clip)
+[![Coverage Status](https://coveralls.io/repos/mertguldur/page_clip/badge.svg?branch=master&service=github)](https://coveralls.io/github/mertguldur/page_clip?branch=master)
 
 Page clip calculates the pages to display in a paginator based on item count, items per page, current page and number of pages to display.
 
