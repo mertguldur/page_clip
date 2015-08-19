@@ -201,5 +201,79 @@ describe PageClip do
         end
       end
     end
+
+    context 'invalid arguments' do
+      context 'negative item count' do
+        it 'throws an exception' do
+          expect do
+            described_class.show \
+              item_count: -1,
+              per_page: 10,
+              current_page: 1,
+              pages_to_show_count: 5
+          end.to raise_error("Item count can't be negative!")
+        end
+      end
+
+      context 'zero per page' do
+        it 'throws an exception' do
+          expect do
+            described_class.show \
+              item_count: 10,
+              per_page: 0,
+              current_page: 1,
+              pages_to_show_count: 5
+          end.to raise_error("Per page must be positive!")
+        end
+      end
+
+      context 'zero current page' do
+        it 'throws an exception' do
+          expect do
+            described_class.show \
+              item_count: 10,
+              per_page: 10,
+              current_page: 0,
+              pages_to_show_count: 5
+          end.to raise_error("Current page must be positive!")
+        end
+      end
+
+      context 'zero pages to show count' do
+        it 'throws an exception' do
+          expect do
+            described_class.show \
+              item_count: 10,
+              per_page: 10,
+              current_page: 1,
+              pages_to_show_count: 0
+          end.to raise_error("Pages to show count must be positive!")
+        end
+      end
+
+      context 'even pages to show count' do
+        it 'throws an exception' do
+          expect do
+            described_class.show \
+              item_count: 10,
+              per_page: 10,
+              current_page: 1,
+              pages_to_show_count: 2
+          end.to raise_error("Pages to show count must be an odd number!")
+        end
+      end
+
+      context 'current page is greater than the last page' do
+        it 'throws an exception' do
+          expect do
+            described_class.show \
+              item_count: 10,
+              per_page: 10,
+              current_page: 2,
+              pages_to_show_count: 5
+          end.to raise_error("Current page can't be greater than the last page!")
+        end
+      end
+    end
   end
 end
